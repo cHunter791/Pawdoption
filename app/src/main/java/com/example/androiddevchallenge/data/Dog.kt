@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge.data
 
-import androidx.compose.ui.graphics.Color
+import androidx.annotation.DrawableRes
 
-val brown = Color(0xFF795548)
-val darkBrown = Color(0xFF5D4037)
-val lightBrown = Color(0xFFD7CCC8)
-
-val amber = Color(0xFFFFC107)
-val gray = Color(0xFF757575)
+data class Dog(
+    val id: Int,
+    val name: String,
+    val breed: String,
+    val age: Int,
+    @DrawableRes val image: Int,
+    val description: String
+)
