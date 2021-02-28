@@ -70,7 +70,14 @@ fun Pawdoption() {
                         }
                     }
                 } else {
-                    null
+                    {
+                        IconButton(onClick = {}) {
+                            Icon(
+                                painter = painterResource(R.drawable.ic_pets),
+                                contentDescription = "App Icon"
+                            )
+                        }
+                    }
                 }
             )
         }

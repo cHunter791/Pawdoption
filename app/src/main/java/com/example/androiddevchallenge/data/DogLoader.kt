@@ -49,7 +49,7 @@ object DogLoader {
         id = Random.nextInt(),
         name = "Fido",
         breed = "Jack Russell",
-        age = 4,
+        age = "4 years",
         image = R.drawable.jack_russell,
         description = "A very energetic dog, looking a good home.",
     )
@@ -58,7 +58,7 @@ object DogLoader {
         id = Random.nextInt(),
         name = "Greg",
         breed = "Bulldog",
-        age = 1,
+        age = "1 year",
         image = R.drawable.bulldog,
         description = "Young and curious, needs a child free home to grow.",
     )
@@ -67,7 +67,7 @@ object DogLoader {
         id = Random.nextInt(),
         name = "Sasha",
         breed = "Golden Retriever",
-        age = 7,
+        age = "7 years",
         image = R.drawable.golden_retriever,
         description = "An old dog for a animal free home to rest.",
     )
@@ -76,7 +76,7 @@ object DogLoader {
         id = Random.nextInt(),
         name = "Spot",
         breed = "Dalmatian",
-        age = 3,
+        age = "3 years",
         image = R.drawable.dalmatian,
         description = "",
     )
@@ -85,7 +85,7 @@ object DogLoader {
         id = Random.nextInt(),
         name = "Corgnelius",
         breed = "Corgi",
-        age = 1,
+        age = "1 year",
         image = R.drawable.corgi,
         description = "",
     )

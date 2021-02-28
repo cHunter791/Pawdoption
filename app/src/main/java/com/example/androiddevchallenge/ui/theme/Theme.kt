@@ -26,11 +26,12 @@ private val DarkColorPalette = darkColors(
     primary = darkBrown,
     primaryVariant = brown,
     secondary = amber,
+    background = black,
     surface = gray,
     onPrimary = Color.White,
     onSecondary = Color.White,
     onBackground = Color.Black,
-    onSurface = Color.Black,
+    onSurface = Color.White,
 )
 
 private val LightColorPalette = lightColors(

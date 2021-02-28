@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.Color
 
 val brown = Color(0xFF795548)
 val darkBrown = Color(0xFF5D4037)
-val lightBrown = Color(0xFFD7CCC8)
-
+val purple = Color(0xFF7e57c2)
 val amber = Color(0xFFFFC107)
-val gray = Color(0xFF757575)
+val black = Color(0xFF121212)
+val gray = Color(0xFF171717)

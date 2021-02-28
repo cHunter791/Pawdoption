@@ -21,7 +21,7 @@ data class Dog(
     val id: Int,
     val name: String,
     val breed: String,
-    val age: Int,
+    val age: String,
     @DrawableRes val image: Int,
     val description: String
 )

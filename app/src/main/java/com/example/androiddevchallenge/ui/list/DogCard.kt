@@ -18,15 +18,17 @@ package com.example.androiddevchallenge.ui.list
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -34,50 +36,70 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Dog
 import com.example.androiddevchallenge.data.DogLoader
+import com.example.androiddevchallenge.ui.components.Chip
+import com.example.androiddevchallenge.ui.components.SimpleFlowRow
 import com.example.androiddevchallenge.ui.theme.PawdoptionTheme
+import com.example.androiddevchallenge.ui.theme.brown
+import com.example.androiddevchallenge.ui.theme.purple
 
 @Composable
 fun DogCard(
     dog: Dog,
-    onClicked: (Dog) -> Unit
+    onClicked: (Dog) -> Unit,
 ) {
     Card(
         modifier = Modifier
             .clickable { onClicked(dog) }
             .fillMaxWidth()
-            .height(100.dp)
+            .wrapContentHeight(),
     ) {
         Row {
-            Image(
-                painter = painterResource(id = dog.image),
-                contentDescription = "Dog Image",
-                modifier = Modifier
-                    .size(100.dp)
-                    .border(4.dp, MaterialTheme.colors.primary, MaterialTheme.shapes.small),
-                contentScale = ContentScale.Crop,
-            )
+            Surface(
+                shape = MaterialTheme.shapes.medium
+            ) {
+                Image(
+                    painter = painterResource(id = dog.image),
+                    contentDescription = "Dog Image",
+                    modifier = Modifier
+                        .size(100.dp)
+                        .border(
+                            4.dp,
+                            MaterialTheme.colors.primaryVariant,
+                            MaterialTheme.shapes.medium
+                        ),
+                    contentScale = ContentScale.Crop,
+                )
+            }
             Column(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .padding(start = 8.dp)
+                    .padding(start = 8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 Text(
-                    "Name: ${dog.name}",
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.subtitle1
+                    dog.name,
+                    style = MaterialTheme.typography.subtitle1,
                 )
-                Text(
-                    "Breed: ${dog.breed}",
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.subtitle2
-                )
-                Text(
-                    "Age: ${dog.age}",
-                    modifier = Modifier.weight(1f),
-                    style = MaterialTheme.typography.subtitle2
-                )
+                SimpleFlowRow(
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    horizontalGap = 8.dp,
+                    verticalGap = 8.dp,
+                ) {
+                    Chip(
+                        dog.breed,
+                        backgroundColor = brown,
+                        imageResource = R.drawable.ic_pets,
+                    )
+                    Chip(
+                        dog.age,
+                        backgroundColor = purple,
+                        imageResource = R.drawable.ic_calendar,
+                    )
+                }
             }
         }
     }

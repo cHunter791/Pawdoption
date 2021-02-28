@@ -49,7 +49,7 @@ fun DetailPage(dog: Dog) {
         Row(
             modifier = Modifier
                 .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
+            verticalAlignment = Alignment.Bottom,
         ) {
             Text(
                 dog.name,
